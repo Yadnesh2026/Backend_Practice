@@ -15,7 +15,7 @@ app.use(express.json()); //TO Read Json data
 app.use("/api",todoRoute);
 
 
-//--------Always last middleware---------
+//--------Middleware---------
 app.use(errHandle)
 
 
