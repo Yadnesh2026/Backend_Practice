@@ -1,29 +1,21 @@
 const mongoose = require("mongoose");
 const Todo = require("../models/Todo");
+const asyncHandler = require("../utils/asyncHandler")
 
 //---------GET ALL TODOS--------------------------
-const getAllTodos = async (req, res,next) => {
-  try {
+const getAllTodos = asyncHandler(async (req, res) => {
     const todos = await Todo.find();
     res.json(todos);
-  } catch {
-    next(err)
-  }
-};
+});
 
 //---------POST Route----------------
-const postRoute = async (req, res) => {
-    try{
+const postRoute = asyncHandler(async (req, res) => {
         const todo = await Todo.create(req.body);
         res.status(201).json(todo)
-    }catch(err){
-         next(err)
-    }
-};
+});
 
 //---------------GET Single Route----------------------
-const getSingleTodo = async (req, res,next) => {
-  try {
+const getSingleTodo = asyncHandler(async (req, res) => {
     const id = req.params.id;
     const todo = await Todo.findById(id);
 
@@ -31,14 +23,10 @@ const getSingleTodo = async (req, res,next) => {
       return res.status(404).json({ message: "ID not able to find" });
     }
     res.json(todo)
-  } catch(err) {
-     next(err)
-  }
-}
+});
 
 //-----------UPDATE Route-----------------------------
-const Update = async (req, res,next) => {
-  try {
+const Update = asyncHandler(async (req, res,next) => {
     const id = req.params.id;
     const todo = await Todo.findById(id);
 
@@ -58,10 +46,7 @@ const Update = async (req, res,next) => {
     const saveTodo = await todo.save();
 
     res.status(200).json(saveTodo);
-  } catch(err) {
-     next(err)
-  }
-}
+});
 
 //---------DELETE Route--------------------------
 const delete1 = async (req, res,next) => {
