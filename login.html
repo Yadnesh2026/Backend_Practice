@@ -25,7 +25,7 @@
       const email = document.getElementById("email");
       const password = document.getElementById("password");
 
-      form.addEventListener("submit",async (e) => {
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const name2 = name.value;
@@ -37,23 +37,28 @@
         const response = await fetch("http://localhost:7111/api/register", {
           method: "POST",
 
-          body: JSON.stringify({//convert the data to JSON Format 
+          body: JSON.stringify({
+            //convert the data to JSON Format
             name: name2,
             email: email2,
             password: password2,
           }),
 
-          headers: {//Tells backend that its an JSON data 
+          headers: {
+            //Tells backend that its an JSON data
             "Content-Type": "application/json",
           },
         });
 
         console.log("form Submitted");
+
+        //fot frontend sends data to backend and backend reposne the data is collected aand that respose is this
+        const data = await response.json();
+        console.log(data);
       });
 
-    //fot frontend sends data to backend and backend reposne the data is collected aand that respose is this 
-      const data = await response.json()
-      console.log(data)
+
+      
     </script>
   </body>
 </html>
