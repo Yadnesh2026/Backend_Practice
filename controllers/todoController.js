@@ -62,4 +62,19 @@ const delete1 = async (req, res,next) => {
   }
 };
 
+
+//Authentication
+
+//--1. Register User
+router.post("/register",asyncHandler(async(req,res)=>{
+  
+}))
+
+
+
+
+
+
+
+
 module.exports = { getAllTodos, postRoute,getSingleTodo ,Update,delete1};

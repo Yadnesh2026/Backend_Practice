@@ -5,6 +5,8 @@ const {
   updateTodo,
   deleteTodo
 } = require("../controllers/todoController");
+const {register}= require("../controllers/authController")
+
 
 const express = require("express");
 const router = express.Router();
@@ -23,5 +25,10 @@ router.put("/todos/:id",Update)
 
 //--------DELETE Route----------
 router.delete("/todos/:id",delete1)
+
+
+
+//Authentication
+router.post("/register",register);
 
 module.exports = router ;

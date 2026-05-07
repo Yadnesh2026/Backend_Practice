@@ -1,5 +1,7 @@
 const User = require("../models/User");
 
+
+//register user
 const register = async (req, res) => {
   const { name, email, password } = req.body;
   const existingUser = await User.findOne({ email });
@@ -20,3 +22,6 @@ res.status(201).json({
     email: newUser.email
 });
 };
+
+
+module.exports = register;
