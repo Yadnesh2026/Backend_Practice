@@ -37,13 +37,13 @@
         fetch("http://localhost:7111/api/register", {
           method: "POST",
 
-          body: JSON.stringify({
+          body: JSON.stringify({//convert the data to JSON Format 
             name: name2,
             email: email2,
             password: password2,
           }),
 
-          headers: {
+          headers: {//Tells backend that its an JSON data 
             "Content-Type": "application/json",
           },
         });
