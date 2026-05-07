@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Todo = require("../models/Todo");
 const asyncHandler = require("../utils/asyncHandler")
 
