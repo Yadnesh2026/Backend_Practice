@@ -62,7 +62,7 @@ It includes practical implementations of:
 
 ---
 
-# 📂 Current Project Structure
+# Current Project Structure
 
 ```bash
 Backend_Practice/
