@@ -1,6 +1,6 @@
 # 🚀 Backend Practice Repository
 
-This repository contains my backend development practice, experiments, and mini-projects built while learning modern backend technologies and server-side development.
+This repository contains my backend development practice, experiments, and mini-projects built while learning modern backend technologies and server-side development
 
 The goal of this repository is to strengthen my understanding of backend architecture, APIs, databases, authentication systems, middleware, and scalable server-side applications through hands-on coding practice.
 
