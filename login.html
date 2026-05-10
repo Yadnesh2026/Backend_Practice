@@ -52,13 +52,18 @@
 
         console.log("form Submitted");
 
-        //fot frontend sends data to backend and backend reposne the data is collected aand that respose is this
+        //from frontend sends data to backend and backend reposne the data is collected aand that respose is this
         const data = await response.json();
         console.log(data);
+
+         if (response.ok) {
+          console.log("User is registred");
+        } else {
+          console.log(data.message);
+        }
+        console.log(response.ok);
+        console.log(response.status);
       });
-
-
-      
     </script>
   </body>
 </html>
