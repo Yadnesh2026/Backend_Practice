@@ -39,16 +39,19 @@ const login = async (req, res) => {
     return res.status(400).json({ message: "Enter the Feilds Correctly" });
   }
 
-  const findUser = await User.findOne({email});
+  //Find the user if he exist or not 
+  const findUser = await User.findOne({ email });
 
-  if(!findUser){
-    res.status(400).json({message:"You are not registered"})
-
-    res.redirect
+  if (!findUser) {
+    return res.status(400).json({ message: "You are not registered" });
   }
 
-
-
+  //Check if the email id matchs the password or not 
+  if(password !== findUser.password){
+    return res.status(400).json({message:"The password does not match the user"});
+  }else{
+    return res.status(200).json({message:"Login Successfull"});
+  }
 };
 
 module.exports = register;
