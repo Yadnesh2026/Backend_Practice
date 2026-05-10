@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -17,6 +17,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+});
+
+//Password Bycrypt Middleware Save
+UserSchema.pre("save", async function (next) {
+  console.log(this.password);
 });
 
 const User = mongoose.model("User", UserSchema);
