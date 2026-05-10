@@ -5,6 +5,7 @@ const User = require("../models/User");
 const register = async (req, res) => {
   const { name, email, password } = req.body;
 
+  //user should entered all the fields name,email and password
   if(!name || !email || !password){
     return res.status(400).json({message:"You have not entered all the fields"})
   }
