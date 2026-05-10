@@ -42,6 +42,7 @@ const login = async (req, res) => {
   //Find the user if he exist or not 
   const findUser = await User.findOne({ email });
 
+  //Checks if the user or email id matchs or not 
   if (!findUser) {
     return res.status(400).json({ message: "You are not registered" });
   }
@@ -54,4 +55,4 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = register;
+module.exports = {register,login};
