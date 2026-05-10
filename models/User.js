@@ -22,6 +22,8 @@ const UserSchema = new mongoose.Schema({
 //Password Bycrypt Middleware Save
 UserSchema.pre("save", async function (next) {
   console.log(this.password);
+
+  next();
 });
 
 const User = mongoose.model("User", UserSchema);
