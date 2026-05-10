@@ -31,4 +31,7 @@ router.delete("/todos/:id",delete1)
 //Authentication
 router.post("/register",register);
 
+//Login Route
+router.post("login",)
+
 module.exports = router ;
