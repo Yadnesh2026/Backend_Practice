@@ -1,6 +1,9 @@
 function App(){
   return(
-    <h1>Vedant Vidulkar</h1>
+    <div>
+      const name ="Vedant"
+      <h1>{name}</h1>
+    </div>
   )
 }
 
