@@ -4,6 +4,7 @@ function App() {
   return (
     <div>
       <h1>{name}</h1>
+      <p>Leanring React</p>
     </div>
   );
 }
