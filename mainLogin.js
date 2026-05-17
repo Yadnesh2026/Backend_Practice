@@ -22,7 +22,6 @@ mainLogin.addEventListener("submit", async (e) => {
       "Content-Type": "application/json",
     },
   });
-
   const data = await dataFetech.json();
   console.log(data);
 
@@ -32,3 +31,7 @@ mainLogin.addEventListener("submit", async (e) => {
     console.log(data.message)
   }
 });
+
+
+
+
