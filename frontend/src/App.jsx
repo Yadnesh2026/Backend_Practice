@@ -1,13 +1,15 @@
 import { useState } from "react";
 
 function App() {
-  let count  = 0
-  const [count,letCount] = useState(0)
+
+  const [count, setCount] = useState(0);
+
   return (
     <>
-    
+      <h1>{count}</h1>
+
+      <button>Increase</button>
     </>
-   
   );
 }
 
