@@ -1,11 +1,13 @@
-function App() {
-  const name = "Vedant";
+import { useState } from "react";
 
+function App() {
+  let count  = 0
+  const [count,letCount] = useState(0)
   return (
-    <div>
-      <h1>{name}</h1>
-      <p>Leanring React</p>
-    </div>
+    <>
+    
+    </>
+   
   );
 }
 
