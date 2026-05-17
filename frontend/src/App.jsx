@@ -1,10 +1,11 @@
-function App(){
-  return(
+function App() {
+  const name = "Vedant";
+
+  return (
     <div>
-      const name ="Vedant"
       <h1>{name}</h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
