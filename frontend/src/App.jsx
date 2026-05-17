@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { use, useState } from "react";
 
 function App() {
 
   const [count, setCount] = useState(0);
+  const [name,setName] = useState("")
 
   return (
     <>
-      <h1>{count}</h1>
+    <h1>{name}</h1>
+      <input type="text"
+      value={name}
+      
+      placeholder="Enter your name"/>
 
-      <button onClick={()=>setCount(count+1)}>Increase</button>
+      <button onChange={(e)=> setName(e.target.value)}>Increase</button>
     </>
   );
 }
