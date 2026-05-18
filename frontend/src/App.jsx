@@ -1,28 +1,27 @@
 import { useState } from "react";
 //Input Vaue Questions
 function App() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] =useState("")
+  const[email,setEmail] = useState("")
+  const[password,setPassword] = useState("")
 
   const handleSubmit =(e)=>{
     e.preventDefault()
 
-    console.log(email)
-    console.log(password)
   }
 
-  return <>
-  <h1>{email}</h1>
-  <form onSubmit={handleSubmit}>
+  return(
+    <>
+    <form onSubmit={handleSubmit}>
 
-    <input placeholder="Enter Email" onChange={(e)=> setEmail(e.target.value)} value={email}/>
-    <input placeholder="Enter Password" onChange={(e)=> setPassword(e.target.value)} value={password}/>
+      <input placeholder="Enter email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+      <input placeholder="Enter password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
 
-    <button type="submit">Submit</button>
+      <button type="submit">Submit</button>
 
-  </form>
-  </>;
+
+    </form>
+    </>
+  )
 }
 
 export default App;
