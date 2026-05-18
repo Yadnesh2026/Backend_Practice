@@ -55,7 +55,10 @@ function Register({setShowLogin}) {
 
         <button>Submit</button>
       </form>
+
+    //For already has an account then true ,  LoginPage - True , RegisterPage - False
       <p onClick={()=>setShowLogin(true)}>Already have account??</p>
+
     </>
   );
 }

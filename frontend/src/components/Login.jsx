@@ -4,7 +4,7 @@ import Register from "./Register";
 
 
 //Login Values
-function Login({setShowLogin}) {
+function Login({setShowLogin, setIsLoggedIn}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,6 +23,11 @@ function Login({setShowLogin}) {
         "Content-type": "application/json",
       }
     });
+
+    //Checks if the user and is correct to login then redirect to dashboard which measn setislogin is true
+    if(data.ok){
+        setIsLoggedIn(true)
+    }
 
 
   };

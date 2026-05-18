@@ -1,21 +1,38 @@
 import { useState } from "react";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import DashBoard from "./components/DashBoard";
 
-function App(){
+function App() {
+  const [showLogin, setShowLogin] = useState(true); //for showing login and register page
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // For showing dashboard for login page
 
-  const[showLogin,setShowLogin] =useState(true)
-  return(
+  return (
     <>
-    {
-      showLogin ?
-      <Login setShowLogin={setShowLogin}/>:
-      <Register setShowLogin={setShowLogin}/>
-    }
+      {/* {showLogin ? (
+        <Login setShowLogin={setShowLogin} />
+      ) : (
+        <Register setShowLogin={setShowLogin} />
+      )} */}
 
+      {/* {
+        isLoggedIn ?(
+          <DashBoard/>
+        ) :(
+          <Login/>
+        )
+      } */}
 
+      {isLoggedIn ? (
+        <DashBoard />
+        
+      ) : showLogin ? (
+        <Login setShowLogin={setIsLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <Register setShowLogin={setIsLoggedIn} />
+      )}
     </>
-  )
+  );
 }
 
 export default App;
