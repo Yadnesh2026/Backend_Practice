@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import {Link} from 'react-router-dom'
+
 //Register Values
 function Register({setShowLogin}) {
   const [name, setName] = useState("");
@@ -57,7 +59,9 @@ function Register({setShowLogin}) {
       </form>
 
     {/* For already has an account then true ,  LoginPage - True , RegisterPage - False */}
-      <p onClick={()=>setShowLogin(true)}>Already have account??</p>
+      {/* <p onClick={()=>setShowLogin(true)}>Already have account??</p> */}
+
+      <Link to="/login">Already have Account</Link>
 
     </>
   );

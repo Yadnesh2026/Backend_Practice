@@ -30,10 +30,14 @@ function App() {
       ) : (
         <Register setShowLogin={setIsLoggedIn} />
       )} */}
-      //Routeing
+
+
+
+      {/* Routeing */}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<DashBoard />} />
       </Routes>
     </>
   );
