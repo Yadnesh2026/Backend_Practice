@@ -1,27 +1,46 @@
 import { useState } from "react";
 //Input Vaue Questions
 function App() {
-  const[email,setEmail] = useState("")
-  const[password,setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit =(e)=>{
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  }
+    const data = await fetch("http://localhost:7111/api/login", {
+      method: "POST",
 
-  return(
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+
+      headers: {
+        "Content-type": "application/json",
+      }
+    });
+
+
+    
+  };
+
+  return (
     <>
-    <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <input
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <input placeholder="Enter email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-      <input placeholder="Enter password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
-
-      <button type="submit">Submit</button>
-
-
-    </form>
+        <button type="submit">Submit</button>
+      </form>
     </>
-  )
+  );
 }
-
 export default App;
